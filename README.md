@@ -22,4 +22,4 @@ With the help of this project we aim to unleash the power of Machine Learning an
   4. run -> pip install -r requirements.txt
 
 ## Fine Tuned ResNet50 Performance Graph
-  ![Screenshot](resnet50.png.png)
+  ![Screenshot](resnet50.png)
