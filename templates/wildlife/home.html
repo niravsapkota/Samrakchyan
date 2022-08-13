@@ -1,0 +1,129 @@
+{%extends 'base.html'%}
+{% load static%}
+{%block content%}
+        
+    <div id="carouselExampleDark" class="carousel slide hero" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+            <div class="carouser-img">
+                <img src="{% static 'images/tiger.jpg'%}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block tagline">
+                <p class="tag-head">Protect</p>
+                <p class="tag-description">Animals are a window to your soul and a doorway to your spiritual destiny.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <div class="carouser-img">
+                <img src="{% static 'images/rhino.jpg'%}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block tagline">
+            <p class="tag-head">Preserve</p>
+            <p class="tag-description">Until one has loved an animal, a part of one’s soul remains unawakened.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carouser-img">
+                <img src="{% static 'images/elephant.jpg'%}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block tagline">
+            <p class="tag-head">Protect</p>
+            <p class="tag-description">Animals are a window to your soul and a doorway to your spiritual destiny.</p>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    
+    <div class="mid-section">
+        <div class="mid-container">
+            <p class="mid-head">ABOUT</p>
+            <p>In this project we are going to work on perspectives in Deep Learning for Wildlife monitoring. The project is interdisciplinary and involves the study of animal ecology as well as computer science. Traditionally, the wildlife is monitored with the help of human field workers for counting the animals, patrolling the forests areas or using the camera traps. Nowadays, the data from the different sources is too large to incorporate the human force. So, we believe in such scenario a Deep Learning model could solve the problem. The model itself will maintain more accuracy than the humans as well as it will also do this in lesser time. This will help to fight against illegal poaching of endangered species, preserve the biodiversity and monitor other activities in the animal world. With the help of this project we aim to unleash the power of Machine Learning and Deep Learning to have the better understanding of the animal world.</p>
+        </div>
+    </div>
+
+    
+
+    
+    <div class="bottom-section">
+        <div class="bottom-container">
+            <h5 class="mid-head">UPLOAD YOUR IMAGE</h5>
+            <div id="upload-image">
+                <div class="center form-container">
+                    <form method="POST" action="{% url 'wildlife:homepage'%}" enctype="multipart/form-data" id="img-submit-form">
+                        {%csrf_token%}
+                        <div class="form-input">
+                            <div class="preview">
+                                {%if validation_error%}
+                                    <p class="text-center text-danger">{{validation_error}}</p>
+                                {%endif%}
+                            <img id="file-ip-1-preview">
+                            </div>
+                                <label for="file-ip-1">Upload Image</label>
+                                <br/>
+                                <input type="file" id="file-ip-1" name="animal" accept="image/*" onchange="showPreview(event);">
+                                
+                                <label for="file-upload" >Classify Image</label>
+                                <input  type="submit" value="submit" id="file-upload">
+                                
+                        </div>
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+    {%if animal_result%}
+    <div class="container mt-5" style="margin-bottom: 20px; padding: 20px 0px;">
+        <div class="row text-center">
+            <h1 class=" text-center p-0" role="alert" style="color: #EFFFC8; margin-bottom: 20px;">Following Results Are Obtained</h1>
+                                    
+                {%for animal in animal_result%}
+                <details style="color: #EFFFC8;">
+                    <summary>
+                      {{animal.name}}
+                    </summary>
+                    <p>
+                      {{animal.desc}}
+                    </p>
+                    <p>
+                        percentage: {{animal.percentage}}
+                    </p>
+                  </details>
+
+                {%endfor%}
+            
+        </div>
+    </div>
+   {%endif%}
+   
+
+
+    {%if animal_img%}
+        <h1>animal</h1>
+        <div style=" border:200px solid blue; text-align:center">
+            <img  src="data:image/png;base64,{{animal_img}}" style="width: 100%;" alt="...">
+        </div>
+        
+    {%endif%}
+        
+{%endblock%}
+
+{%block footer%}
+    <p class="text-center" id="footer">&copy; 2022 Samrakchyan</p>
+{%endblock footer%}
+
