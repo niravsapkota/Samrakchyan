@@ -15,7 +15,7 @@ The classification model is trained and validated on the 14,182 images. The data
 Please visit (https://lila.science/datasets/missouricameratraps) for more information.\
 The detection model due to fact that was trained on RetinaNet and was very GPU intensive we decided to take a look of its capability trained on only few images(159).\
 The PASCAL VOC annotations format for training the detection model can be found at the following link.\
-Please visit (https://drive.google.com/drive/folders/19hIwFRhshdOALWb4vwUwth1V2jBYX9aq?usp=sharing) for finding the annotations.\
+Please visit (https://drive.google.com/drive/folders/19hIwFRhshdOALWb4vwUwth1V2jBYX9aq?usp=sharing) for finding the annotations.
 
 
 ## Installation Guide
