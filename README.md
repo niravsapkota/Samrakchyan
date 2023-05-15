@@ -1,5 +1,5 @@
 # samrakchyan
-A project for Yomari Code Camp 2022 
+A Machine Learnig Project for Yomari Code Camp 2022 
 
 ## Description
 
