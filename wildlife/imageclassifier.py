@@ -28,7 +28,7 @@ animal_desc = {
     "Mouflon":"Mouflon are wild sheep, a species regarded as one of the two original ancestors of modern-day sheep. Their coat is reddish-brown and short-haired, and a dark stripe runs along their back, with lighter-colored patches on the side. They are very wary animals. The males have large horns of a sickle shape, prized by many trophy hunters. Females have horns too, but much smaller ones than those of males. The adult males develop a large ruff of coarse long hair on their chest, which is white at the throat, becoming black towards the forelegs.",
     "European Hare":"The European hare, also known as the brown hare, is a species of hare native to Europe and parts of Asia. It is among the largest hare species and is adapted to temperate, open country. Hares are herbivorous and feed mainly on grasses and herbs, supplementing these with twigs, buds, bark and field crops, particularly in winter. Their natural predators include large birds of prey, canids and felids. They rely on high-speed endurance running to escape predation, having long, powerful limbs and large nostrils.",
     "White Tailed Deer":"White-tailed deer, the smallest members of the North American deer family, are found from southern Canada to South America. In the heat of summer they typically inhabit fields and meadows using clumps of broad-leaved and coniferous forests for shade. During the winter they generally keep to forests, preferring coniferous stands that provide shelter from the harsh elements. White-tailed deer are herbivores, leisurely grazing on most available plant foods. Their stomachs allow them to digest a varied diet, including leaves, twigs, fruits and nuts, grass, corn, alfalfa, and even lichens and other fungi.",
-    "Bird spec":"Birds are a group of warm-blooded vertebrates constituting the class Aves, characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton. Birds have wings whose development varies according to species. Some of the examples of birds are eagles, vultures, pigeons etc."
+    "Bird Spec":"Birds are a group of warm-blooded vertebrates constituting the class Aves, characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton. Birds have wings whose development varies according to species. Some of the examples of birds are eagles, vultures, pigeons etc."
     
 }
 
@@ -70,11 +70,6 @@ def runTest(image_path):
     animal2 = animals[index2[0][0]]
     animal3 = animals[index3[0][0]]
 
-
-    
-    print()
-    print()
-    print(predictions[0])
     return [
         {
             'name':f"{animal1}",
